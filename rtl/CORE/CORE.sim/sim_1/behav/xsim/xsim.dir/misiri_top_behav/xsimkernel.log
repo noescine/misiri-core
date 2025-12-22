@@ -1,0 +1,7 @@
+Running: xsim.dir/misiri_top_behav/xsimk.exe -simmode gui -wdb misiri_top_behav.wdb -simrunnum 0 -socket 58041
+Design successfully loaded
+Design Loading Memory Usage: 28828 KB (Peak: 28828 KB)
+Design Loading CPU Usage: 483 ms
+Simulation completed
+Simulation Memory Usage: 30008 KB (Peak: 30008 KB)
+Simulation CPU Usage: 827 ms

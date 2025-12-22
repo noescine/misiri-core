@@ -1,0 +1,17 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../CORE.srcs/sources_1/backend/ALU.v" \
+"../../../../CORE.srcs/sources_1/frontend/Brch_M.v" \
+"../../../../CORE.srcs/sources_1/frontend/Program_counter.v" \
+"../../../../CORE.srcs/sources_1/control/decode.v" \
+"../../../../CORE.srcs/sources_1/frontend/ifetch.v" \
+"../../../../CORE.srcs/sources_1/memory/imm_gen.v" \
+"../../../../CORE.srcs/sources_1/frontend/pc_mux.v" \
+"../../../../../lib/regfile_32x32.v" \
+"../../../../CORE.srcs/sources_1/misiri_top.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

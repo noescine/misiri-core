@@ -1,1 +1,11 @@
 rtl/CORE/CORE.cache/wt/project.wpc
+rtl/CORE/CORE.cache/wt/synthesis.wdf
+rtl/CORE/CORE.cache/sim/ssm.db
+rtl/CORE/CORE.cache/wt/synthesis_details.wdf
+rtl/CORE/CORE.cache/wt/webtalk_pa.xml
+rtl/CORE/CORE.cache/wt/xsim.wdf
+rtl/CORE/CORE.runs/.jobs/vrs_config_1.xml
+rtl/CORE/CORE.runs/.jobs/vrs_config_2.xml
+*.xml
+*.rst
+*.tcl

@@ -1,0 +1,548 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Mon Dec 22 13:19:23 2025
+# Process ID         : 20632
+# Current directory  : C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.runs/synth_1
+# Command line       : vivado.exe -log misiri_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source misiri_top.tcl
+# Log file           : C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.runs/synth_1/misiri_top.vds
+# Journal file       : C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.runs/synth_1\vivado.jou
+# Running On         : DESKTOP-T2K4A01
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i7-13650HX
+# CPU Frequency      : 2803 MHz
+# CPU Physical cores : 14
+# CPU Logical cores  : 20
+# Host memory        : 16849 MB
+# Swap memory        : 17179 MB
+# Total Virtual      : 34029 MB
+# Available Virtual  : 6953 MB
+#-----------------------------------------------------------
+source misiri_top.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental {C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/utils_1/imports/synth_1/misiri_top.dcp}
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/utils_1/imports/synth_1/misiri_top.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top misiri_top -part xc7a35tfgg484-2
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tfgg484-2
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 22264
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 968.719 ; gain = 467.965
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-9339] data object 'wb_data' is already declared [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:135]
+INFO: [Synth 8-6826] previous declaration of 'wb_data' is from here [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:40]
+CRITICAL WARNING: [Synth 8-11152] second declaration of 'wb_data' is ignored [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:135]
+INFO: [Synth 8-6157] synthesizing module 'misiri_top' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+INFO: [Synth 8-6157] synthesizing module 'pc_reg' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/frontend/Program_counter.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'pc_reg' (0#1) [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/frontend/Program_counter.v:14]
+INFO: [Synth 8-6157] synthesizing module 'ifetch' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/frontend/ifetch.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'ifetch' (0#1) [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/frontend/ifetch.v:14]
+WARNING: [Synth 8-7071] port 'imem_addr' of module 'ifetch' is unconnected for instance 'u_ifetch' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:69]
+WARNING: [Synth 8-7023] instance 'u_ifetch' of module 'ifetch' has 7 connections declared, but only 6 given [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:69]
+INFO: [Synth 8-6157] synthesizing module 'decode' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/control/decode.v:17]
+INFO: [Synth 8-6155] done synthesizing module 'decode' (0#1) [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/control/decode.v:17]
+INFO: [Synth 8-6157] synthesizing module 'imm_gen' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/memory/imm_gen.v:18]
+INFO: [Synth 8-6155] done synthesizing module 'imm_gen' (0#1) [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/memory/imm_gen.v:18]
+INFO: [Synth 8-6157] synthesizing module 'regfile_32x32' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/lib/regfile_32x32.v:15]
+INFO: [Synth 8-6155] done synthesizing module 'regfile_32x32' (0#1) [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/lib/regfile_32x32.v:15]
+INFO: [Synth 8-6155] done synthesizing module 'misiri_top' (0#1) [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+WARNING: [Synth 8-6014] Unused sequential element id_pc_reg was removed.  [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 1st driver pin 'tb_wb_data[0]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 1st driver pin 'tb_wb_data[1]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 1st driver pin 'tb_wb_data[2]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 1st driver pin 'tb_wb_data[3]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 1st driver pin 'tb_wb_data[4]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 1st driver pin 'tb_wb_data[5]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 1st driver pin 'tb_wb_data[6]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 1st driver pin 'tb_wb_data[7]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 1st driver pin 'tb_wb_data[8]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 1st driver pin 'tb_wb_data[9]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 1st driver pin 'tb_wb_data[10]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 1st driver pin 'tb_wb_data[11]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 1st driver pin 'tb_wb_data[12]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 1st driver pin 'tb_wb_data[13]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 1st driver pin 'tb_wb_data[14]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 1st driver pin 'tb_wb_data[15]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 1st driver pin 'tb_wb_data[16]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 1st driver pin 'tb_wb_data[17]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 1st driver pin 'tb_wb_data[18]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 1st driver pin 'tb_wb_data[19]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 1st driver pin 'tb_wb_data[20]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 1st driver pin 'tb_wb_data[21]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 1st driver pin 'tb_wb_data[22]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 1st driver pin 'tb_wb_data[23]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 1st driver pin 'tb_wb_data[24]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 1st driver pin 'tb_wb_data[25]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 1st driver pin 'tb_wb_data[26]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 1st driver pin 'tb_wb_data[27]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 1st driver pin 'tb_wb_data[28]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 1st driver pin 'tb_wb_data[29]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 1st driver pin 'tb_wb_data[30]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 1st driver pin 'tb_wb_data[31]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v-139.18 is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:139]
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[31] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[30] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[29] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[28] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[27] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[26] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[25] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[24] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[23] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[22] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[21] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[20] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[19] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[18] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[17] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[16] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[15] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[14] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[13] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[12] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[11] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[10] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[9] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[8] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[7] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[6] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[5] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[4] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[3] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[2] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[1] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[0] driven by constant 0
+WARNING: [Synth 8-7129] Port instr[6] in module imm_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[5] in module imm_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[4] in module imm_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[3] in module imm_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[2] in module imm_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[1] in module imm_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[0] in module imm_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_NextPCSrc in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[31] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[30] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[29] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[28] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[27] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[26] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[25] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[24] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[23] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[22] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[21] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[20] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[19] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[18] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[17] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[16] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[15] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[14] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[13] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[12] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[11] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[10] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[9] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[8] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[7] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[6] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[5] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[4] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[3] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[2] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[1] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[0] in module misiri_top is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1078.699 ; gain = 577.945
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[31] with 1st driver pin 'tb_wb_data[31]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[31] with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[30] with 1st driver pin 'tb_wb_data[30]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[30] with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[29] with 1st driver pin 'tb_wb_data[29]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[29] with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[28] with 1st driver pin 'tb_wb_data[28]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[28] with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[27] with 1st driver pin 'tb_wb_data[27]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[27] with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[26] with 1st driver pin 'tb_wb_data[26]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[26] with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[25] with 1st driver pin 'tb_wb_data[25]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[25] with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[24] with 1st driver pin 'tb_wb_data[24]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[24] with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[23] with 1st driver pin 'tb_wb_data[23]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[23] with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[22] with 1st driver pin 'tb_wb_data[22]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[22] with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[21] with 1st driver pin 'tb_wb_data[21]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[21] with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[20] with 1st driver pin 'tb_wb_data[20]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[20] with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[19] with 1st driver pin 'tb_wb_data[19]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[19] with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[18] with 1st driver pin 'tb_wb_data[18]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[18] with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[17] with 1st driver pin 'tb_wb_data[17]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[17] with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[16] with 1st driver pin 'tb_wb_data[16]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[16] with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[15] with 1st driver pin 'tb_wb_data[15]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[15] with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[14] with 1st driver pin 'tb_wb_data[14]' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin rd_data[14] with 2nd driver pin 'GND' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:9]
+INFO: [Common 17-14] Message 'Synth 8-6859' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|       32|Failed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1078.699 ; gain = 577.945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1078.699 ; gain = 577.945
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1078.699 ; gain = 0.000
+WARNING: [Netlist 29-1115] Found multi-term driver net: <const0>.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc]
+WARNING: [Vivado 12-584] No ports matched 'CLK'. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:12]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:12]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CLK'. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:13]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports CLK]'. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:13]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-584] No ports matched 'rx'. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:146]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:146]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'tx'. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:147]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:147]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'OUT_DP[6]'. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:154]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:154]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'OUT_DP[5]'. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:155]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:155]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'OUT_DP[4]'. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:156]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:156]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'OUT_DP[3]'. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:157]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:157]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'OUT_DP[2]'. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:158]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:158]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'OUT_DP[1]'. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:159]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:159]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'OUT_DP[0]'. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:160]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:160]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'OUT_DP[7]'. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:161]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:161]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'dp_sel[0]'. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:163]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:163]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'dp_sel[1]'. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:164]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:164]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'dp_sel[2]'. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:165]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:165]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'dp_sel[3]'. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:166]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:166]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'dp_sel[4]'. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:167]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:167]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'dp_sel[5]'. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:168]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:168]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'n_Flags[1]'. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:258]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:258]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'n_Flags[3]'. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:259]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:259]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'n_Flags[0]'. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:260]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:260]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'n_Flags[2]'. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:261]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:261]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'kminus'. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:264]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:264]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'H_L'. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:265]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:265]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'kplus'. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:266]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:266]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'RESET'. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:270]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc:270]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1171.719 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1171.719 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 1171.719 ; gain = 670.965
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tfgg484-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 1171.719 ; gain = 670.965
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 1171.719 ; gain = 670.965
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1171.719 ; gain = 670.965
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 34    
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input    4 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 32    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[31] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[30] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[29] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[28] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[27] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[26] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[25] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[24] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[23] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[22] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[21] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[20] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[19] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[18] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[17] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[16] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[15] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[14] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[13] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[12] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[11] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[10] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[9] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[8] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[7] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[6] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[5] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[4] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[3] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[2] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[1] driven by constant 0
+WARNING: [Synth 8-3917] design misiri_top has port tb_wb_data[0] driven by constant 0
+WARNING: [Synth 8-7129] Port tb_NextPCSrc in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[31] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[30] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[29] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[28] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[27] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[26] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[25] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[24] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[23] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[22] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[21] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[20] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[19] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[18] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[17] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[16] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[15] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[14] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[13] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[12] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[11] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[10] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[9] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[8] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[7] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[6] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[5] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[4] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[3] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[2] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[1] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tb_ALURes[0] in module misiri_top is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1171.719 ; gain = 670.965
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|misiri_top  | imem       | 2048x2        | LUT            | 
+|misiri_top  | p_0_out    | 2048x2        | Block RAM      | 
++------------+------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 1270.555 ; gain = 769.801
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 1270.555 ; gain = 769.801
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 1280.652 ; gain = 779.898
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+ERROR: [Synth 8-11584] pin tb_wb_data[31] is connected to multiple driven net where the other driver is constant
+ERROR: synthesis optimization failed, fatal insert_io failure.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:21 . Memory (MB): peak = 1495.621 ; gain = 901.848
+INFO: [Common 17-83] Releasing license: Synthesis
+28 Infos, 168 Warnings, 160 Critical Warnings and 2 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Vivado Synthesis failed
+INFO: [Common 17-206] Exiting Vivado at Mon Dec 22 13:20:24 2025...

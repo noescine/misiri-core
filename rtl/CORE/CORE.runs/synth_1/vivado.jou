@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Mon Dec 22 13:19:23 2025
+# Process ID         : 20632
+# Current directory  : C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.runs/synth_1
+# Command line       : vivado.exe -log misiri_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source misiri_top.tcl
+# Log file           : C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.runs/synth_1/misiri_top.vds
+# Journal file       : C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.runs/synth_1\vivado.jou
+# Running On         : DESKTOP-T2K4A01
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i7-13650HX
+# CPU Frequency      : 2803 MHz
+# CPU Physical cores : 14
+# CPU Logical cores  : 20
+# Host memory        : 16849 MB
+# Swap memory        : 17179 MB
+# Total Virtual      : 34029 MB
+# Available Virtual  : 6953 MB
+#-----------------------------------------------------------
+source misiri_top.tcl -notrace

@@ -2,17 +2,9 @@
 `ifndef MISIRI_DECODE_V
 `define MISIRI_DECODE_V
 
-// -------------------------------------------------------------
-// Archivo: decode.v
-// Proyecto: MISIRI Core
-// Descripción:
-//   Decodificador RV32I
-//   Traduce instrucción -> señales de control
-// -------------------------------------------------------------
-
 `include "../common/opcodes.v"
 `include "../common/alu_ops.v"
-
+`include "../common/imm_types.v"
 
 module decode (
     input  wire [31:0] instr,
@@ -31,21 +23,20 @@ module decode (
 
     output reg  [1:0]  wb_sel,
     output reg  [2:0]  branch_type,
-    output reg  [2:0]  imm_type
+    output reg  [2:0]  imm_type,
+    
+    // Señales para PC MUX
+    output reg         is_jal,
+    output reg         is_jalr
 );
 
-    // Campos básicos de la instrucción
+    // Campos básicos
     wire [6:0] opcode = instr[6:0];
     wire [2:0] funct3 = instr[14:12];
     wire [6:0] funct7 = instr[31:25];
 
-    // ---------------------------------------------------------
-    // Decodificación combinacional
-    // ---------------------------------------------------------
     always @(*) begin
-        // -------------------------
         // Valores por defecto
-        // -------------------------
         rs1 = instr[19:15];
         rs2 = instr[24:20];
         rd  = instr[11:7];
@@ -61,25 +52,30 @@ module decode (
         wb_sel      = 2'b00;   // ALU
         branch_type = 3'b000;  // NONE
         imm_type    = 3'b000;  // NONE
+        is_jal      = 1'b0;
+        is_jalr     = 1'b0;
 
-        // -------------------------
-        // Decode por opcode
-        // -------------------------
         case (opcode)
 
+            // R-type: ADD, SUB, SLT
             `OPCODE_RTYPE: begin
                 reg_write = 1'b1;
+                alu_src_b_imm = 1'b0;
+                imm_type = 3'b000; // IMM_NONE
                 case ({funct7, funct3})
                     {7'b0000000,3'b000}: alu_op = `ALU_ADD; // ADD
                     {7'b0100000,3'b000}: alu_op = `ALU_SUB; // SUB
+                    {7'b0000000,3'b010}: alu_op = `ALU_SLT; // SLT
                     default: alu_op = `ALU_NOP;
                 endcase
             end
 
+            // I-type: ADDI
             `OPCODE_ITYPE: begin
                 reg_write     = 1'b1;
                 alu_src_b_imm = 1'b1;
-                imm_type      = 3'b001; // IMM_I
+                alu_op        = `ALU_ADD;  // ADDI
+                imm_type      = `IMM_I;
             end
 
             `OPCODE_LOAD: begin
@@ -87,19 +83,21 @@ module decode (
                 mem_read      = 1'b1;
                 alu_src_b_imm = 1'b1;
                 wb_sel        = 2'b01; // MEM
-                imm_type      = 3'b001; // IMM_I
+                alu_op        = `ALU_ADD; // dirección
+                imm_type      = `IMM_I;
             end
 
             `OPCODE_STORE: begin
                 mem_write     = 1'b1;
                 alu_src_b_imm = 1'b1;
-                imm_type      = 3'b010; // IMM_S
+                alu_op        = `ALU_ADD; // dirección
+                imm_type      = `IMM_S;
             end
 
             `OPCODE_BRANCH: begin
                 alu_op      = `ALU_SUB;
                 branch_type = funct3;
-                imm_type    = 3'b011; // IMM_B
+                imm_type    = `IMM_B;
             end
 
             `OPCODE_JAL: begin
@@ -107,17 +105,25 @@ module decode (
                 alu_src_a_pc  = 1'b1;
                 alu_src_b_imm = 1'b1;
                 wb_sel        = 2'b10; // PC+4
-                imm_type      = 3'b100; // IMM_J
+                imm_type      = `IMM_J;
+                is_jal        = 1'b1;
+            end
+
+            `OPCODE_JALR: begin
+                reg_write     = 1'b1;
+                alu_src_a_pc  = 1'b1;
+                alu_src_b_imm = 1'b1;
+                wb_sel        = 2'b10;
+                imm_type      = `IMM_I;
+                is_jalr       = 1'b1;
             end
 
             default: begin
-                // Instrucción no soportada → NOP
                 alu_op = `ALU_NOP;
             end
 
         endcase
     end
-
 endmodule
 
 `endif
