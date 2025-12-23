@@ -2,65 +2,22 @@
 `ifndef MISIRI_TOP_V
 `define MISIRI_TOP_V
 
-`include "common/opcodes.v"
-`include "common/alu_ops.v"
+`include "common/instructions.v"
 `include "common/imm_types.v"
 
 module misiri_top (
-    input  wire clk,
-    input  wire rst,
+    input  wire        clk,
+    input  wire        rst,
     output wire [31:0] pc_out,
-    output wire [31:0] instr_out,
-    output wire        instr_valid_out
+    output wire [31:0] instr_out
 );
 
-    // ----------------------------
-    // IMEM simple (ROM)
-    // ----------------------------
-    localparam IMEM_WORDS = 2048;
-    reg [31:0] imem [0:IMEM_WORDS-1];
-
-    integer i;
-    initial begin
-        // Programa de prueba:
-        // 0: ADDI x1, x0, 5        -> x1 = 5
-        // 1: ADDI x2, x0, 10       -> x2 = 10
-        // 2: ADD  x3, x1, x2       -> x3 = 15
-        // 3: ADDI x4, x0, -3       -> x4 = -3
-        // 4: SLT  x5, x4, x1       -> x5 = (x4 < x1) ? 1 : 0
-        // 5: JAL  x0, 8            -> salto incondicional corto (salta a instr index 7)
-        // 6: ADDI x6, x0, 1        -> (se saltará)
-        // 7: ADDI x7, x0, 2        -> x7 = 2 (se ejecuta por JAL)
-        // 8: ADD  x8, x6, x7       -> x8 = x6 + x7 = 2
-        // resto: NOP
-
-        // Inicializa todo a NOP
-        for (i = 0; i < IMEM_WORDS; i = i + 1)
-            imem[i] = 32'h00000013; // NOP (ADDI x0,x0,0)
-
-        // Cargar programa (encoding RV32I)
-        imem[0] = 32'h00500093; // ADDI x1, x0, 5
-        imem[1] = 32'h00A00113; // ADDI x2, x0, 10
-        imem[2] = 32'h002081B3; // ADD x3, x1, x2
-        imem[3] = 32'hFFD00213; // ADDI x4, x0, -3  (imm = 0xFFD -> -3)
-        imem[4] = 32'h001222B3; // SLT x5, x4, x1
-        imem[5] = 32'h0100006F; // JAL x0, 8
-        imem[6] = 32'h00100313; // ADDI x6, x0, 1  (se saltará)
-        imem[7] = 32'h00200393; // ADDI x7, x0, 2
-        imem[8] = 32'h007C0433; // ADD x8, x6, x7
-    end
-
-    // ----------------------------
-    // PC / PC MUX wires
-    // ----------------------------
+    // ------------------------------------------------------------------
+    // PC
+    // ------------------------------------------------------------------
     wire [31:0] pc_curr;
     wire [31:0] pc_next;
 
-    // We'll compute pc_next with pc_mux instance below
-
-    // ----------------------------
-    // PC register
-    // ----------------------------
     pc_reg u_pc (
         .clk(clk),
         .rst(rst),
@@ -70,60 +27,32 @@ module misiri_top (
     );
     assign pc_out = pc_curr;
 
-    // ----------------------------
-    // IMEM read (safe index)
-    // ----------------------------
-    wire [31:0] imem_rdata;
-    wire [31:0] imem_idx = (pc_curr[31:2] < IMEM_WORDS) ? pc_curr[31:2] : 32'd0;
-    assign imem_rdata = imem[imem_idx];
-
-    // ----------------------------
-    // IFETCH
-    // ----------------------------
-    wire [31:0] if_instr;
-    wire        if_valid;
-
-    ifetch u_ifetch (
-        .clk(clk),
-        .rst(rst),
-        .pc(pc_curr),
-        .imem_rdata(imem_rdata),
-        .instr(if_instr),
-        .instr_valid(if_valid)
-    );
-
-    assign instr_out = if_instr;
-    assign instr_valid_out = if_valid;
-
-    // ----------------------------
-    // IF/ID pipeline registers (align pc and instr)
-    // ----------------------------
+    // ------------------------------------------------------------------
+    // IF/ID pipeline registers (fetch result captured here)
+    // ------------------------------------------------------------------
     reg [31:0] id_pc;
-    reg [31:0] id_instr;        // ahora SI guardamos la instrucción en el registro ID
-    
-    always @(posedge clk) begin
-        if (rst) begin
-            id_pc    <= 32'd0;
-            id_instr <= 32'd0;
-        end else begin
-            id_pc    <= pc_curr;
-            id_instr <= if_instr; // captura estable y sin desalineación
-        end
-    end
-    // ahora decode y imm_gen usan id_instr (registrado)
-    
+    reg [31:0] id_instr;
 
-    // ----------------------------
-    // DECODE
-    // ----------------------------
-    wire [4:0] rs1_addr, rs2_addr, rd_addr;
-    wire [3:0] alu_op;
-    wire       alu_src_a_pc, alu_src_b_imm;
-    wire       reg_write;
-    wire       mem_read, mem_write;
-    wire [1:0] wb_sel;
-    wire [2:0] branch_type;
-    wire [2:0] imm_type;
+    // ------------------------------------------------------------------
+    // Decode stage signals
+    // ------------------------------------------------------------------
+    wire [4:0]  rs1_addr;
+    wire [4:0]  rs2_addr;
+    wire [4:0]  rd_addr;
+
+    wire [3:0]  alu_op;
+    wire        alu_src_a_pc;
+    wire        alu_src_b_imm;
+    wire        reg_write;
+    wire        mem_read_sig;
+    wire        mem_write_sig;
+    wire [1:0]  mem_size;   // 00=byte,01=half,10=word
+    wire        mem_signed; // (decode would set for LB/LH vs LBU/LHU) - if not present assume 1
+    wire [1:0]  wb_sel;
+    wire [2:0]  branch_type;
+    wire [2:0]  imm_type;
+    wire        is_jal;
+    wire        is_jalr;
 
     decode u_decode (
         .instr(id_instr),
@@ -134,21 +63,19 @@ module misiri_top (
         .alu_src_a_pc(alu_src_a_pc),
         .alu_src_b_imm(alu_src_b_imm),
         .reg_write(reg_write),
-        .mem_read(mem_read),
-        .mem_write(mem_write),
+        .mem_read(mem_read_sig),
+        .mem_write(mem_write_sig),
+        .mem_size(mem_size),
         .wb_sel(wb_sel),
         .branch_type(branch_type),
-        .imm_type(imm_type)
+        .imm_type(imm_type),
+        .is_jal(is_jal),
+        .is_jalr(is_jalr)
     );
 
-    // Detect JAL / JALR from opcode bits (no change to decode)
-    wire [6:0] id_opcode = id_instr[6:0];
-    wire is_jal  = (id_opcode == `OPCODE_JAL);
-    wire is_jalr = (id_opcode == `OPCODE_JALR);
-
-    // ----------------------------
-    // IMM GEN
-    // ----------------------------
+    // ------------------------------------------------------------------
+    // Immediate generator
+    // ------------------------------------------------------------------
     wire [31:0] imm_ext;
     imm_gen u_imm (
         .instr(id_instr),
@@ -156,11 +83,11 @@ module misiri_top (
         .imm_ext(imm_ext)
     );
 
-    // ----------------------------
-    // REGFILE
-    // ----------------------------
-    wire [31:0] rs1_data, rs2_data;
-    // wb_data selected below from ALU / MEM / PC+4
+    // ------------------------------------------------------------------
+    // Register file (BRAM-friendly)
+    // ------------------------------------------------------------------
+    wire [31:0] rs1_data;
+    wire [31:0] rs2_data;
     wire [31:0] wb_data;
 
     regfile_32x32 u_regfile (
@@ -175,18 +102,44 @@ module misiri_top (
         .rd_data(wb_data)
     );
 
-    // ----------------------------
-    // ALU instantiation
-    // ----------------------------
+    // ------------------------------------------------------------------
+    // Simple 1-cycle forwarding (prev EX -> current ID)
+    // ------------------------------------------------------------------
+    reg  [4:0]  last_rd;
+    reg         last_reg_write;
+    reg [31:0]  last_alu_result;
+
+    always @(posedge clk) begin
+        if (rst) begin
+            last_rd         <= 5'd0;
+            last_reg_write  <= 1'b0;
+            last_alu_result <= 32'd0;
+        end else begin
+            last_rd         <= rd_addr;
+            last_reg_write  <= reg_write;
+            last_alu_result <= alu_result; // alu_result is driven below
+        end
+    end
+
+    wire [31:0] rs1_raw = rs1_data;
+    wire [31:0] rs2_raw = rs2_data;
+
+    wire use_forward_rs1 = (last_reg_write && (last_rd != 5'd0) && (last_rd == rs1_addr));
+    wire use_forward_rs2 = (last_reg_write && (last_rd != 5'd0) && (last_rd == rs2_addr));
+
+    wire [31:0] rs1_for_alu = use_forward_rs1 ? last_alu_result : rs1_raw;
+    wire [31:0] rs2_for_alu = use_forward_rs2 ? last_alu_result : rs2_raw;
+
+    // ------------------------------------------------------------------
+    // ALU
+    // ------------------------------------------------------------------
     wire [31:0] alu_a;
     wire [31:0] alu_b;
     wire [31:0] alu_result;
-    wire        flag_carry;
-    wire        flag_zero;
-    wire        flag_neg;
+    wire        flag_carry, flag_zero, flag_neg;
 
-    assign alu_a = (alu_src_a_pc) ? id_pc : rs1_data;
-    assign alu_b = (alu_src_b_imm) ? imm_ext : rs2_data;
+    assign alu_a = (alu_src_a_pc) ? id_pc : rs1_for_alu;
+    assign alu_b = (alu_src_b_imm) ? imm_ext : rs2_for_alu;
 
     alu u_alu (
         .a(alu_a),
@@ -198,9 +151,9 @@ module misiri_top (
         .flag_neg(flag_neg)
     );
 
-    // ----------------------------
-    // Branch Unit instantiation
-    // ----------------------------
+    // ------------------------------------------------------------------
+    // Branch unit
+    // ------------------------------------------------------------------
     wire branch_taken;
     branch_unit u_branch (
         .branch_type(branch_type),
@@ -210,40 +163,90 @@ module misiri_top (
         .branch_taken(branch_taken)
     );
 
-    // ----------------------------
-    // PC MUX instantiation
-    // ----------------------------
-    wire [31:0] pc_mux_out;
+    // ------------------------------------------------------------------
+    // LSU (Load / Store Unit)
+    // ------------------------------------------------------------------
+    wire [31:0] load_data;
+    wire [31:0] store_data;
+    // store_we (to memory_controller) - we use mem_write_sig directly
+    wire        store_we = mem_write_sig;
+
+    LSU u_lsu (
+        .mem_word(mem_rdata),
+        .rs2_data(rs2_data),
+        .addr_lsb(alu_result[1:0]),
+        .mem_size(mem_size),
+        .mem_signed(mem_signed),      // si decode no provee, conecta 1'b1 por ahora
+        .is_load(mem_read_sig),
+        .is_store(mem_write_sig),
+        .load_data(load_data),
+        .store_data(store_data)
+    );
+
+    // ------------------------------------------------------------------
+    // Memory controller (IMEM + DMEM)
+    // ------------------------------------------------------------------
+    wire [31:0] mem_addr;
+    wire [31:0] mem_wdata;
+    wire        mem_read;   // hacia controller (loads)
+    wire        mem_write;  // hacia controller (stores)
+    wire [31:0] mem_rdata;
+    wire        mem_ready;
+
+    // direccion a memoria: LOAD/STORE usan ALU, fetch usa PC
+    assign mem_addr  = (mem_read_sig || mem_write_sig) ? alu_result : pc_curr;
+    assign mem_wdata = store_data;
+    assign mem_read  = mem_read_sig;
+    assign mem_write = store_we;
+
+    memory_controller u_mem (
+        .clk(clk),
+        .addr(mem_addr),
+        .wdata(mem_wdata),
+        .mem_read(mem_read),
+        .mem_write(mem_write),
+        .size(mem_size),
+        .rdata(mem_rdata),
+        .ready(mem_ready)
+    );
+
+    // ------------------------------------------------------------------
+    // PC MUX
+    // ------------------------------------------------------------------
     pc_mux u_pc_mux (
         .pc_curr(pc_curr),
         .imm_B(imm_ext),
         .imm_J(imm_ext),
         .imm_I(imm_ext),
-        .rs1_val(rs1_data),
+        .rs1_val(rs1_for_alu),
         .branch_taken(branch_taken),
         .is_jal(is_jal),
         .is_jalr(is_jalr),
-        .pc_next(pc_mux_out)
+        .pc_next(pc_next)
     );
 
-    // Connect pc_next to pc_reg input
-    assign pc_next = pc_mux_out;
+    // ------------------------------------------------------------------
+    // Writeback selection
+    // ------------------------------------------------------------------
+    assign wb_data = (wb_sel == 2'b01) ? load_data :
+                     (wb_sel == 2'b10) ? (id_pc + 32'd4) :
+                                         alu_result;
 
-    // ----------------------------
-    // Simple data memory (not used now) 
-    // ----------------------------
-    wire [31:0] dmem_rdata;
-    assign dmem_rdata = 32'd0; // placeholder, no data memory implemented
+    // ------------------------------------------------------------------
+    // IF/ID pipeline registers: capture the fetched instruction when mem is ready
+    // ------------------------------------------------------------------
+    always @(posedge clk) begin
+        if (rst) begin
+            id_pc    <= 32'd0;
+            id_instr <= 32'h00000013; // NOP
+        end else if (mem_ready) begin
+            id_pc    <= pc_curr;
+            id_instr <= mem_rdata;    // fetch result (IMEM word)
+        end
+    end
 
-    // ----------------------------
-    // Writeback selection (wb_sel):
-    // 00 -> ALU
-    // 01 -> MEM
-    // 10 -> PC+4 (for JAL)
-    // ----------------------------
-    assign wb_data = (wb_sel == 2'b01) ? dmem_rdata :
-                     (wb_sel == 2'b10) ? (id_pc + 32'd4) : alu_result;
-
+    // debug output
+    assign instr_out = id_instr;
 
 endmodule
 

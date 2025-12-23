@@ -12,7 +12,7 @@
 //  - Sin overflow / sin flags globales
 // -----------------------------------------------------------------------------
 
-`include "../common/alu_ops.v"
+`include "../common/instructions.v"
 
 module alu (
     input  wire [31:0] a,

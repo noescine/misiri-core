@@ -9,3 +9,9 @@ rtl/CORE/CORE.runs/.jobs/vrs_config_2.xml
 *.xml
 *.rst
 *.tcl
+*.dcp
+*.pb
+*.log
+*.ini
+*.dcp
+*.sdb
