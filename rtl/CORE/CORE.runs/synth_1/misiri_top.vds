@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Tue Dec 23 16:17:09 2025
-# Process ID         : 39968
+# Start of session at: Thu Feb 12 13:30:05 2026
+# Process ID         : 26044
 # Current directory  : C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.runs/synth_1
 # Command line       : vivado.exe -log misiri_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source misiri_top.tcl
 # Log file           : C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.runs/synth_1/misiri_top.vds
@@ -17,9 +17,9 @@
 # CPU Physical cores : 14
 # CPU Logical cores  : 20
 # Host memory        : 16849 MB
-# Swap memory        : 17179 MB
-# Total Virtual      : 34029 MB
-# Available Virtual  : 6196 MB
+# Swap memory        : 13421 MB
+# Total Virtual      : 30271 MB
+# Available Virtual  : 9056 MB
 #-----------------------------------------------------------
 source misiri_top.tcl -notrace
 Command: read_checkpoint -auto_incremental -incremental {C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/utils_1/imports/synth_1/misiri_top.dcp}
@@ -32,69 +32,66 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tfgg484-2
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 42544
+INFO: [Synth 8-7075] Helper process launched with PID 8888
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 967.371 ; gain = 465.145
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 967.602 ; gain = 466.934
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-11241] undeclared symbol 'mem_rdata', assumed default net type 'wire' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:175]
-WARNING: [Synth 8-8895] 'mem_rdata' is already implicitly declared on line 175 [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:193]
-WARNING: [Synth 8-6901] identifier 'alu_result' is used before its declaration [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:120]
-INFO: [Synth 8-6157] synthesizing module 'misiri_top' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:8]
-INFO: [Synth 8-6157] synthesizing module 'pc_reg' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/frontend/Program_counter.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'pc_reg' (0#1) [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/frontend/Program_counter.v:14]
-INFO: [Synth 8-6157] synthesizing module 'decode' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/control/decode.v:14]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/control/decode.v:116]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/control/decode.v:133]
-INFO: [Synth 8-6155] done synthesizing module 'decode' (0#1) [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/control/decode.v:14]
+INFO: [Synth 8-6157] synthesizing module 'misiri_top' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:3]
+INFO: [Synth 8-6157] synthesizing module 'pc_reg' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/frontend/Program_counter.v:1]
+	Parameter RESET_VECTOR bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pc_reg' (0#1) [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/frontend/Program_counter.v:1]
+INFO: [Synth 8-6157] synthesizing module 'decode' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/control/decode.v:8]
+INFO: [Synth 8-226] default block is never used [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/control/decode.v:110]
 INFO: [Synth 8-6157] synthesizing module 'imm_gen' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/memory/imm_gen.v:18]
 INFO: [Synth 8-6155] done synthesizing module 'imm_gen' (0#1) [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/memory/imm_gen.v:18]
-INFO: [Synth 8-6157] synthesizing module 'regfile_32x32' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:15]
-INFO: [Synth 8-6155] done synthesizing module 'regfile_32x32' (0#1) [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:15]
-INFO: [Synth 8-6157] synthesizing module 'alu' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/ALU.v:17]
-INFO: [Synth 8-6155] done synthesizing module 'alu' (0#1) [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/ALU.v:17]
+INFO: [Synth 8-6155] done synthesizing module 'decode' (0#1) [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/control/decode.v:8]
+INFO: [Synth 8-6157] synthesizing module 'regfile_32x32' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:11]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'regs[0]' is not inferred as ram due to incorrect usage [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:24]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'regs[1]' is not inferred as ram due to incorrect usage [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:24]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'regs[2]' is not inferred as ram due to incorrect usage [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:24]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'regs[3]' is not inferred as ram due to incorrect usage [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:24]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'regs[4]' is not inferred as ram due to incorrect usage [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:24]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'regs[5]' is not inferred as ram due to incorrect usage [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:24]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'regs[6]' is not inferred as ram due to incorrect usage [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:24]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'regs[7]' is not inferred as ram due to incorrect usage [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:24]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'regs[8]' is not inferred as ram due to incorrect usage [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:24]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'regs[9]' is not inferred as ram due to incorrect usage [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:24]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'regs[10]' is not inferred as ram due to incorrect usage [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:24]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'regs[11]' is not inferred as ram due to incorrect usage [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:24]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'regs[12]' is not inferred as ram due to incorrect usage [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:24]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'regs[13]' is not inferred as ram due to incorrect usage [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:24]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'regs[14]' is not inferred as ram due to incorrect usage [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:24]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'regs[15]' is not inferred as ram due to incorrect usage [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:24]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'regs[16]' is not inferred as ram due to incorrect usage [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:24]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'regs[17]' is not inferred as ram due to incorrect usage [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:24]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'regs[18]' is not inferred as ram due to incorrect usage [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:24]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'regs[19]' is not inferred as ram due to incorrect usage [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:24]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'regs[20]' is not inferred as ram due to incorrect usage [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:24]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'regs[21]' is not inferred as ram due to incorrect usage [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:24]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'regs[22]' is not inferred as ram due to incorrect usage [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:24]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'regs[23]' is not inferred as ram due to incorrect usage [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:24]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'regs[24]' is not inferred as ram due to incorrect usage [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:24]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'regs[25]' is not inferred as ram due to incorrect usage [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:24]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'regs[26]' is not inferred as ram due to incorrect usage [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:24]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'regs[27]' is not inferred as ram due to incorrect usage [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:24]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'regs[28]' is not inferred as ram due to incorrect usage [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:24]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'regs[29]' is not inferred as ram due to incorrect usage [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:24]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'regs[30]' is not inferred as ram due to incorrect usage [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:24]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'regs[31]' is not inferred as ram due to incorrect usage [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'regfile_32x32' (0#1) [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/regfile_32x32.v:11]
+INFO: [Synth 8-6157] synthesizing module 'alu' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/ALU.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (0#1) [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/backend/ALU.v:7]
 INFO: [Synth 8-6157] synthesizing module 'branch_unit' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/frontend/Brch_M.v:13]
 INFO: [Synth 8-6155] done synthesizing module 'branch_unit' (0#1) [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/frontend/Brch_M.v:13]
-INFO: [Synth 8-6157] synthesizing module 'LSU' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/memory/LSU.v:18]
-INFO: [Synth 8-6155] done synthesizing module 'LSU' (0#1) [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/memory/LSU.v:18]
-INFO: [Synth 8-6157] synthesizing module 'memory_controller' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/interfaces/memory_controller.v:15]
-INFO: [Synth 8-6157] synthesizing module 'imem' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/lib/IMEM.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'imem' (0#1) [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/lib/IMEM.v:14]
-INFO: [Synth 8-6157] synthesizing module 'dmem' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/lib/dmem.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'dmem' (0#1) [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/lib/dmem.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'memory_controller' (0#1) [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/interfaces/memory_controller.v:15]
 INFO: [Synth 8-6157] synthesizing module 'pc_mux' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/frontend/pc_mux.v:13]
 INFO: [Synth 8-6155] done synthesizing module 'pc_mux' (0#1) [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/frontend/pc_mux.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'misiri_top' (0#1) [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:8]
-WARNING: [Synth 8-4767] Trying to implement RAM 'mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
-Reason is one or more of the following :
-	1: RAM has multiple writes via different ports in same process. If RAM inferencing intended, write to one port per process. 
-	2: Unable to determine number of words or word size in RAM. 
-	3: No valid read/write found for RAM. 
-RAM "mem_reg" dissolved into registers
-WARNING: [Synth 8-3848] Net mem_signed in module/entity misiri_top does not have driver. [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:50]
-WARNING: [Synth 8-7129] Port addr[31] in module imem is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[30] in module imem is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[29] in module imem is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[28] in module imem is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[27] in module imem is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[26] in module imem is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[25] in module imem is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[24] in module imem is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[23] in module imem is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[22] in module imem is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[21] in module imem is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[20] in module imem is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[19] in module imem is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[18] in module imem is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[17] in module imem is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[16] in module imem is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[15] in module imem is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[14] in module imem is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[13] in module imem is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[12] in module imem is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[1] in module imem is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[0] in module imem is either unconnected or has no load
-WARNING: [Synth 8-7129] Port mem_read in module memory_controller is either unconnected or has no load
+INFO: [Synth 8-6157] synthesizing module 'lsu_align' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/new/lsu_align.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'lsu_align' (0#1) [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/new/lsu_align.v:1]
+INFO: [Synth 8-6157] synthesizing module 'lsu_bus_if' [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/new/lsu_bus_if.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'lsu_bus_if' (0#1) [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/new/lsu_bus_if.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'misiri_top' (0#1) [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/misiri_top.v:3]
+WARNING: [Synth 8-7137] Register pc_reg in module pc_reg has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/sources_1/frontend/Program_counter.v:13]
+WARNING: [Synth 8-3917] design misiri_top has port irq_ack driven by constant 0
 WARNING: [Synth 8-7129] Port instr[6] in module imm_gen is either unconnected or has no load
 WARNING: [Synth 8-7129] Port instr[5] in module imm_gen is either unconnected or has no load
 WARNING: [Synth 8-7129] Port instr[4] in module imm_gen is either unconnected or has no load
@@ -102,19 +99,28 @@ WARNING: [Synth 8-7129] Port instr[3] in module imm_gen is either unconnected or
 WARNING: [Synth 8-7129] Port instr[2] in module imm_gen is either unconnected or has no load
 WARNING: [Synth 8-7129] Port instr[1] in module imm_gen is either unconnected or has no load
 WARNING: [Synth 8-7129] Port instr[0] in module imm_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port valid in module decode is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq_vect[7] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq_vect[6] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq_vect[5] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq_vect[4] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq_vect[3] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq_vect[2] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq_vect[1] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq_vect[0] in module misiri_top is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1240.781 ; gain = 738.555
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1077.504 ; gain = 576.836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1240.781 ; gain = 738.555
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1077.504 ; gain = 576.836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1240.781 ; gain = 738.555
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1077.504 ; gain = 576.836
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.237 . Memory (MB): peak = 1240.781 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1077.504 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -201,100 +207,75 @@ Resolution: If [get_<value>] was used to populate the object, check to make sure
 Finished Parsing XDC File [C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/constrs_1/new/AX7035B.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1336.992 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1137.043 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.055 . Memory (MB): peak = 1336.992 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1137.043 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1336.992 ; gain = 834.766
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1137.043 ; gain = 636.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tfgg484-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1336.992 ; gain = 834.766
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1137.043 ; gain = 636.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1336.992 ; gain = 834.766
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1137.043 ; gain = 636.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Preparing Guide Design
 ---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-6895] The reference checkpoint C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/utils_1/imports/synth_1/misiri_top.dcp is not suitable for use with incremental synthesis for this design. Please regenerate the checkpoint for this design with -incremental_synth switch in the same Vivado session that synth_design has been run. Synthesis will continue with the default flow
 ---------------------------------------------------------------------------------
-Finished Doing Graph Differ : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1336.992 ; gain = 834.766
----------------------------------------------------------------------------------
-misiri_top__GC0memory_controller__GC0dmem__GB5dmem__GB4dmem__GB3dmem__GB2dmem__GB1dmem__GB0---------------------------------------------------------------------------------
-Finished Preparing Guide Design : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1336.992 ; gain = 834.766
+Finished Doing Graph Differ : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1137.043 ; gain = 636.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1336.992 ; gain = 834.766
+Finished Preparing Guide Design : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1137.043 ; gain = 636.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Start Mimic Skeleton from Reference
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Mimic Skeleton from Reference : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1336.992 ; gain = 834.766
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1137.043 ; gain = 636.375
 ---------------------------------------------------------------------------------
 
 
 Incremental Synthesis Report Summary:
 
-1. Incremental synthesis run: yes
+1. Incremental synthesis run: no
 
-   Stitch points used : changed
-
-
-2. Change Summary
-
-Report Incremental Modules: 
-+-+----------------+------------+----------+----------+
-| |Changed Modules |Replication |Instances |Changed % |
-+-+----------------+------------+----------+----------+
-+-+----------------+------------+----------+----------+
+   Reason for not running incremental synthesis : 
 
 
-   Full Design Size (number of cells) : 189256
-   Resynthesis Design Size (number of cells) : 0
-   Resynth % : 0.0000,  Reuse % : 100.0000
-
-3. Reference Checkpoint Information
-
-+--------------------------------------------------------------------------------------------------------------------------+
-| DCP Location:  | C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.srcs/utils_1/imports/synth_1/misiri_top.dcp |
-+--------------------------------------------------------------------------------------------------------------------------+
-
-
-+--------------------------------+------------------------------+
-|         DCP Information        |             Value            |
-+--------------------------------+------------------------------+
-| Vivado Version                 |                    v2024.2 |
-| DCP State                      |                              |
-+--------------------------------+------------------------------+
-
-
-
-Report RTL Partitions: 
-+------+-------------------------------+------------+----------+
-|      |RTL Partition                  |Replication |Instances |
-+------+-------------------------------+------------+----------+
-|1     |dmem__GB0_#REUSE#              |           1|         0|
-|2     |dmem__GB1_#REUSE#              |           1|         0|
-|3     |dmem__GB2_#REUSE#              |           1|         0|
-|4     |dmem__GB3_#REUSE#              |           1|         0|
-|5     |dmem__GB4_#REUSE#              |           1|         0|
-|6     |dmem__GB5_#REUSE#              |           1|         0|
-|7     |memory_controller__GC0_#REUSE# |           1|         0|
-|8     |misiri_top__GC0_#REUSE#        |           1|         0|
-+------+-------------------------------+------------+----------+
+INFO: [Synth 8-7130] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
++---Adders : 
+	   3 Input   33 Bit       Adders := 1     
+	   2 Input   33 Bit       Adders := 1     
+	   2 Input   32 Bit       Adders := 3     
+	   3 Input   32 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 33    
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 17    
+	   4 Input   32 Bit        Muxes := 4     
+	   2 Input    4 Bit        Muxes := 2     
+	   8 Input    4 Bit        Muxes := 1     
+	   3 Input    4 Bit        Muxes := 1     
+	   5 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 1     
+	   6 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 33    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -311,41 +292,36 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-7077] IncrSyn: subsequent runs will still be incremental as the reference run was parallel and that data is reused
+WARNING: [Synth 8-3917] design misiri_top has port irq_ack driven by constant 0
+WARNING: [Synth 8-7129] Port valid in module decode is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq_vect[7] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq_vect[6] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq_vect[5] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq_vect[4] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq_vect[3] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq_vect[2] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq_vect[1] in module misiri_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq_vect[0] in module misiri_top is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1336.992 ; gain = 834.766
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Stitch Unchanged AreaOpt Partitions
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Stitch Unchanged AreaOpt Partitions : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1336.992 ; gain = 834.766
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1180.934 ; gain = 680.266
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 1471.777 ; gain = 969.551
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1269.480 ; gain = 768.812
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 1474.199 ; gain = 971.973
+Finished Timing Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1271.969 ; gain = 771.301
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-7077] IncrSyn: subsequent runs will still be incremental as the reference run was parallel and that data is reused
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 1492.449 ; gain = 990.223
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Stitch Unchanged Partitions
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Stitch Unchanged Partitions : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1492.449 ; gain = 990.223
+Finished Technology Mapping : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 1312.160 ; gain = 811.492
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -359,42 +335,41 @@ Finished Flattening Before IO Insertion
 ---------------------------------------------------------------------------------
 Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-7052] The timing for the instance u_mem/u_imem/rdata_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:56 ; elapsed = 00:00:59 . Memory (MB): peak = 1661.621 ; gain = 1159.395
+Finished IO Insertion : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 1495.945 ; gain = 995.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:56 ; elapsed = 00:00:59 . Memory (MB): peak = 1661.621 ; gain = 1159.395
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 1495.945 ; gain = 995.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:59 ; elapsed = 00:01:02 . Memory (MB): peak = 1673.270 ; gain = 1171.043
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 1495.945 ; gain = 995.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:59 ; elapsed = 00:01:02 . Memory (MB): peak = 1673.270 ; gain = 1171.043
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 1495.945 ; gain = 995.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:04 ; elapsed = 00:01:07 . Memory (MB): peak = 1695.070 ; gain = 1192.844
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 1495.945 ; gain = 995.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:04 ; elapsed = 00:01:07 . Memory (MB): peak = 1695.070 ; gain = 1192.844
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 1495.945 ; gain = 995.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -407,49 +382,51 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+---------+------+
-|      |Cell     |Count |
-+------+---------+------+
-|1     |BUFG     |     1|
-|2     |CARRY4   |    56|
-|3     |LUT1     |     1|
-|4     |LUT2     |   452|
-|5     |LUT3     |  7765|
-|6     |LUT4     |   865|
-|7     |LUT5     | 14944|
-|8     |LUT6     | 20540|
-|9     |MUXF7    |  4640|
-|10    |MUXF8    |  2240|
-|11    |RAMB36E1 |     1|
-|12    |FDRE     |  9376|
-|13    |FDSE     |    14|
-|14    |IBUF     |     2|
-|15    |OBUF     |    64|
-+------+---------+------+
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    64|
+|3     |LUT1   |     1|
+|4     |LUT2   |   209|
+|5     |LUT3   |    97|
+|6     |LUT4   |    97|
+|7     |LUT5   |   172|
+|8     |LUT6   |   964|
+|9     |MUXF7  |   256|
+|10    |MUXF8  |     6|
+|11    |FDCE   |    32|
+|12    |FDPE   |    32|
+|13    |FDRE   |   992|
+|14    |LDC    |    32|
+|15    |IBUF   |    99|
+|16    |OBUF   |   135|
++------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:04 ; elapsed = 00:01:07 . Memory (MB): peak = 1695.070 ; gain = 1192.844
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 1495.945 ; gain = 995.277
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:48 ; elapsed = 00:01:02 . Memory (MB): peak = 1695.070 ; gain = 1096.633
-Synthesis Optimization Complete : Time (s): cpu = 00:01:04 ; elapsed = 00:01:07 . Memory (MB): peak = 1695.070 ; gain = 1192.844
+Synthesis finished with 0 errors, 1 critical warnings and 11 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:29 ; elapsed = 00:00:37 . Memory (MB): peak = 1495.945 ; gain = 935.738
+Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 1495.945 ; gain = 995.277
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.488 . Memory (MB): peak = 1704.246 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 6937 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1505.113 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 358 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'misiri_top' is not ideal for floorplanning, since the cellview 'regfile_32x32' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1726.191 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1508.766 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 32 instances were transformed.
+  LDC => LDCE: 32 instances
 
-Synth Design complete | Checksum: d6c27ed6
+Synth Design complete | Checksum: 96888a6c
 INFO: [Common 17-83] Releasing license: Synthesis
-44 Infos, 64 Warnings, 26 Critical Warnings and 0 Errors encountered.
+38 Infos, 88 Warnings, 27 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:14 ; elapsed = 00:01:19 . Memory (MB): peak = 1726.191 ; gain = 1415.930
+synth_design: Time (s): cpu = 00:00:38 ; elapsed = 00:00:44 . Memory (MB): peak = 1508.766 ; gain = 1198.887
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.123 . Memory (MB): peak = 1726.191 ; gain = 0.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1508.766 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Ciudad Maderas/Documents/misiri-core/rtl/CORE/CORE.runs/synth_1/misiri_top.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1726.191 ; gain = 0.000
 INFO: [Vivado 12-24828] Executing command : report_utilization -file misiri_top_utilization_synth.rpt -pb misiri_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Dec 23 16:18:38 2025...
+INFO: [Common 17-206] Exiting Vivado at Thu Feb 12 13:30:51 2026...

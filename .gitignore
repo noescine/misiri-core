@@ -15,3 +15,14 @@ rtl/CORE/CORE.runs/.jobs/vrs_config_2.xml
 *.ini
 *.dcp
 *.sdb
+*.rpt
+*.log
+*.jou
+*.pb
+*.txt
+*.js
+*.sh
+*.rpt
+*.vds
+*.bat
+*.rpx

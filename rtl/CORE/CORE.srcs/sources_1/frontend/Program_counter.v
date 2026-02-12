@@ -1,32 +1,17 @@
-`timescale 1ns / 1ps
-`ifndef MISIRI_PC_REG_V
-`define MISIRI_PC_REG_V
-
-// -----------------------------------------------------------------------------
-// pc_reg.v
-// Proyecto: MISIRI Core
-// Descripción:
-//  Registro del Program Counter.
-//  NO decide saltos.
-//  NO conoce instrucciones.
-// -----------------------------------------------------------------------------
-
-module pc_reg (
+module pc_reg #(
+    parameter RESET_VECTOR = 32'h00000000
+)(
     input  wire        clk,
-    input  wire        rst,
+    input  wire        rst_n,
     input  wire        pc_en,
     input  wire [31:0] pc_next,
-
+    input  wire [31:0] boot_pc,      // Nuevo: valor de reset
     output reg  [31:0] pc
 );
-
-    always @(posedge clk) begin
-        if (rst)
-            pc <= 32'd0;
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n)
+            pc <= boot_pc;
         else if (pc_en)
             pc <= pc_next;
     end
-
 endmodule
-
-`endif

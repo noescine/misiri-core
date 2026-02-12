@@ -2,30 +2,25 @@
 `ifndef MISIRI_IMEM_V
 `define MISIRI_IMEM_V
 
-// -----------------------------------------------------------------------------
-// imem.v
-// IMEM: ROM de instrucciones word-aligned.
-// - Address: byte address (pc), pero internamente indexamos por [11:2]
-// - Depth: 2048 words (8192 bytes)
-// - Lectura síncrona: rdata sale en siguiente flanco.
-// - Inicialización por initial / $readmemh.
-// -----------------------------------------------------------------------------
+// IMEM: ROM de instrucciones (word-aligned)
+// - Depth: 2048 words
+// - Address: byte address, usamos bits [11:2] para index (word aligned)
 
 module imem (
     input  wire        clk,
-    input  wire [31:0] addr,   // byte address (PC)
+    input  wire [31:0] addr,   // byte address
     output reg  [31:0] rdata
 );
-
     localparam WORDS = 2048;
+    (* ram_style = "block" *)
     reg [31:0] mem [0:WORDS-1];
 
     integer i;
     initial begin
-        // inicializar a NOP (ADDI x0,x0,0 = 0x00000013)
-        for (i = 0; i < WORDS; i = i + 1) mem[i] = 32'h00000013;
+        // Inicializa todo a NOP
+        for (i = 0; i < WORDS; i = i + 1) mem[i] = 32'h00000013; // NOP ADDI x0,x0,0
 
-        // Programa de prueba (puedes comentar y usar $readmemh)
+        // Programa de prueba ampliado (ejemplo). Puedes sustituir por $readmemh.
         mem[0] = 32'h00500093; // ADDI x1, x0, 5
         mem[1] = 32'h00A00113; // ADDI x2, x0, 10
         mem[2] = 32'h002081B3; // ADD x3, x1, x2
@@ -35,15 +30,15 @@ module imem (
         mem[6] = 32'h00100313; // ADDI x6, x0, 1
         mem[7] = 32'h00200393; // ADDI x7, x0, 2
         mem[8] = 32'h007C0433; // ADD x8, x6, x7
+        // ejemplo extendido: utiliza direcciones siguientes para cubrir más instrucciones
+        mem[9]  = 32'h00000413; // ADDI x8, x0, 0 (ejemplo)
+        mem[10] = 32'h00000513; // ADDI x10,x0,0
+        // ... añade más si quieres
     end
 
-    // lectura síncrona: index por word address addr[11:2]
-    wire [10:0] idx = addr[11:2]; // 2048 words -> 11 bits
+    // lectura registrada: rdata disponible al siguiente flanco
     always @(posedge clk) begin
-        if (idx < WORDS)
-            rdata <= mem[idx];
-        else
-            rdata <= 32'h00000013; // NOP si fuera fuera de rango
+        rdata <= mem[addr[11:2]]; // word index
     end
 
 endmodule

@@ -2,16 +2,6 @@
 `ifndef MISIRI_ALU_V
 `define MISIRI_ALU_V
 
-// -----------------------------------------------------------------------------
-// alu.v
-// Proyecto: MISIRI Core
-// Descripción:
-//  ALU combinacional RV32I
-//  - Sin estado
-//  - Flags locales para branch
-//  - Sin overflow / sin flags globales
-// -----------------------------------------------------------------------------
-
 `include "../common/instructions.v"
 
 module alu (
@@ -20,12 +10,9 @@ module alu (
     input  wire [3:0]  alu_op,
 
     output reg  [31:0] result,
-    
-
-    // Flags combinacionales
-    output wire flag_carry,
-    output wire flag_zero,
-    output wire flag_neg
+    output wire        flag_carry,
+    output wire        flag_zero,
+    output wire        flag_neg
 );
 
     always @(*) begin
@@ -44,10 +31,15 @@ module alu (
         endcase
     end
 
-    // Flags derivadas del resultado
-    wire [32:0] add_ext;
-    assign add_ext = {1'b0, a} + {1'b0, b};
-    assign flag_carry = (alu_op == `ALU_ADD) ? add_ext[32] : 1'b0;
+    // ---------- FLAG CARRY CORREGIDO ----------
+    wire [32:0] add_result = {1'b0, a} + {1'b0, b};
+    wire [32:0] sub_result = {1'b0, a} + {1'b0, ~b} + 33'd1; // a - b = a + ~b + 1
+
+    assign flag_carry = (alu_op == `ALU_ADD) ? add_result[32] :
+                        (alu_op == `ALU_SUB) ? sub_result[32] :
+                        1'b0;
+    // ------------------------------------------
+
     assign flag_zero = (result == 32'd0);
     assign flag_neg  = result[31];
 
